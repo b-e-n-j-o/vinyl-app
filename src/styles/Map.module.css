@@ -1,0 +1,77 @@
+/* components/Map.module.css */
+.mapContainer {
+    height: 600px;
+    width: 100%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background-color: #FAF2E2;
+  }
+  
+  .map {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .popupContent {
+    padding: 1rem;
+    max-width: 20rem;
+  }
+  
+  .storeName {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #6F4E37;
+  }
+  
+  .storeAddress {
+    color: #6F4E37;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contactLink {
+    color: #6F4E37;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .contactLink:hover {
+    color: #FAF2E2;
+    background-color: #6F4E37;
+  }
+  
+  .section {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e7eb00;
+  }
+  
+  .sectionTitle {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #6F4E37;
+  }
+  
+  .hoursList {
+    font-size: 0.875rem;
+    color: #6F4E37;
+  }
+  
+  .directionsButton {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #6F4E37;
+    color: #FAF2E2;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+  }
+  
+  .directionsButton:hover {
+    background-color: #506ec3;
+  }

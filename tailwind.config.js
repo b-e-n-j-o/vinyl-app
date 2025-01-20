@@ -11,6 +11,11 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        spin: {
+          '100%': { transform: 'rotate(360deg)' }
+        }
+      }
     },
   },
   plugins: [],

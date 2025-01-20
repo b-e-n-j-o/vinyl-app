@@ -1,0 +1,596 @@
+2025-01-14 11:38:57,134 - WARNING - Downloading detection model, please wait. This may take several minutes depending upon your network connection.
+2025-01-14 11:38:59,752 - INFO - Download complete
+2025-01-14 11:38:59,753 - WARNING - Downloading recognition model, please wait. This may take several minutes depending upon your network connection.
+2025-01-14 11:39:00,841 - INFO - Download complete.
+2025-01-14 11:39:02,908 - INFO - Lecteur OCR initialisé avec les langues : en, fr
+2025-01-14 11:39:02,909 - INFO - Dossier d'images à traiter : /Volumes/T7/DIG/vinyl-app/OCR/images_vinyles
+2025-01-14 11:39:02,909 - INFO - Traitement de l'image : 472776803_1707958683394988_8295370929371328162_n.jpg
+2025-01-14 11:39:06,660 - INFO - Nombre de textes détectés : 21
+2025-01-14 11:39:06,660 - INFO - Texte détecté : "(suntune" (Probabilité: 0.88)
+2025-01-14 11:39:06,660 - INFO - Texte détecté : "chapter" (Probabilité: 0.59)
+2025-01-14 11:39:06,660 - INFO - Texte détecté : "Elevared" (Probabilité: 0.82)
+2025-01-14 11:39:06,660 - INFO - Traitement de l'image : ._472776803_1707958683394988_8295370929371328162_n.jpg
+2025-01-14 11:39:06,891 - ERROR - Erreur lors du traitement de ._472776803_1707958683394988_8295370929371328162_n.jpg: Could not find a backend to open `/Volumes/T7/DIG/vinyl-app/OCR/images_vinyles/._472776803_1707958683394988_8295370929371328162_n.jpg`` with iomode `r`.
+Based on the extension, the following plugins might add capable backends:
+  pyav:  pip install imageio[pyav]
+2025-01-14 11:39:06,891 - INFO - Traitement de l'image : 472800098_514475801653801_2213864537763132373_n.jpg
+2025-01-14 11:39:13,700 - INFO - Nombre de textes détectés : 76
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "1" (Probabilité: 0.95)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "8" (Probabilité: 0.99)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "by" (Probabilité: 0.99)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "Fair" (Probabilité: 0.98)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "bY" (Probabilité: 0.97)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "8" (Probabilité: 0.82)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "8" (Probabilité: 0.71)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "BRAXTON" (Probabilité: 1.00)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "FREE)" (Probabilité: 0.87)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "DHAR" (Probabilité: 1.00)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "(SET" (Probabilité: 0.89)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "BACK" (Probabilité: 0.99)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "JUMP" (Probabilité: 0.94)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "822" (Probabilité: 0.81)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "SLX-oooiox" (Probabilité: 0.82)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "3.37" (Probabilité: 0.68)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "Mix" (Probabilité: 0.68)
+2025-01-14 11:39:13,701 - INFO - Texte détecté : "Club" (Probabilité: 0.56)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Radid" (Probabilité: 0.63)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Jhon" (Probabilité: 1.00)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Clivile;" (Probabilité: 0.78)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Recsfrded" (Probabilité: 0.74)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "for" (Probabilité: 1.00)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Robert" (Probabilité: 1.00)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Fair" (Probabilité: 1.00)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Jhon" (Probabilité: 1.00)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Ben" (Probabilité: 0.53)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Acoustilog ," (Probabilité: 0.74)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Arr." (Probabilité: 0.74)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Jhon" (Probabilité: 0.84)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Crzig" (Probabilité: 0.88)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Prod" (Probabilité: 0.54)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Reynolds" (Probabilité: 0.99)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Ins" (Probabilité: 0.64)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Kevin " (Probabilité: 0.84)
+2025-01-14 11:39:13,702 - INFO - Texte détecté : "Guest" (Probabilité: 0.53)
+2025-01-14 11:39:13,702 - INFO - Traitement de l'image : ._472800098_514475801653801_2213864537763132373_n.jpg
+2025-01-14 11:39:13,714 - ERROR - Erreur lors du traitement de ._472800098_514475801653801_2213864537763132373_n.jpg: Could not find a backend to open `/Volumes/T7/DIG/vinyl-app/OCR/images_vinyles/._472800098_514475801653801_2213864537763132373_n.jpg`` with iomode `r`.
+Based on the extension, the following plugins might add capable backends:
+  pyav:  pip install imageio[pyav]
+2025-01-14 11:39:13,714 - INFO - Traitement de l'image : 472881689_434452202967845_2737869948002468998_n.jpg
+2025-01-14 11:39:14,256 - INFO - Nombre de textes détectés : 14
+2025-01-14 11:39:14,256 - INFO - Texte détecté : "8" (Probabilité: 0.94)
+2025-01-14 11:39:14,256 - INFO - Texte détecté : "1" (Probabilité: 0.54)
+2025-01-14 11:39:14,256 - INFO - Texte détecté : "Gng " (Probabilité: 0.54)
+2025-01-14 11:39:14,256 - INFO - Texte détecté : "Orand" (Probabilité: 0.55)
+2025-01-14 11:39:14,256 - INFO - Texte détecté : "2" (Probabilité: 0.80)
+2025-01-14 11:39:14,256 - INFO - Texte détecté : "6" (Probabilité: 0.60)
+2025-01-14 11:39:14,256 - INFO - Texte détecté : "2" (Probabilité: 0.66)
+2025-01-14 11:39:14,256 - INFO - Traitement de l'image : ._472881689_434452202967845_2737869948002468998_n.jpg
+2025-01-14 11:39:14,262 - ERROR - Erreur lors du traitement de ._472881689_434452202967845_2737869948002468998_n.jpg: Could not find a backend to open `/Volumes/T7/DIG/vinyl-app/OCR/images_vinyles/._472881689_434452202967845_2737869948002468998_n.jpg`` with iomode `r`.
+Based on the extension, the following plugins might add capable backends:
+  pyav:  pip install imageio[pyav]
+2025-01-14 11:39:14,262 - INFO - Traitement de l'image : 472925532_1279709286615626_5253478396869509952_n.jpg
+2025-01-14 11:39:14,744 - INFO - Nombre de textes détectés : 15
+2025-01-14 11:39:14,744 - INFO - Texte détecté : "Eslelan" (Probabilité: 0.70)
+2025-01-14 11:39:14,744 - INFO - Texte détecté : "Querer"" (Probabilité: 0.95)
+2025-01-14 11:39:14,744 - INFO - Traitement de l'image : ._472925532_1279709286615626_5253478396869509952_n.jpg
+2025-01-14 11:39:14,749 - ERROR - Erreur lors du traitement de ._472925532_1279709286615626_5253478396869509952_n.jpg: Could not find a backend to open `/Volumes/T7/DIG/vinyl-app/OCR/images_vinyles/._472925532_1279709286615626_5253478396869509952_n.jpg`` with iomode `r`.
+Based on the extension, the following plugins might add capable backends:
+  pyav:  pip install imageio[pyav]
+2025-01-14 11:39:14,749 - INFO - Traitement de l'image : 473333807_3951798028438975_4013947429191889646_n.jpg
+2025-01-14 11:39:15,355 - INFO - Nombre de textes détectés : 11
+2025-01-14 11:39:15,355 - INFO - Texte détecté : "JIE" (Probabilité: 0.64)
+2025-01-14 11:39:15,355 - INFO - Texte détecté : "& D.J. THE BOY" (Probabilité: 0.74)
+2025-01-14 11:39:15,355 - INFO - Traitement de l'image : ._473333807_3951798028438975_4013947429191889646_n.jpg
+2025-01-14 11:39:15,360 - ERROR - Erreur lors du traitement de ._473333807_3951798028438975_4013947429191889646_n.jpg: Could not find a backend to open `/Volumes/T7/DIG/vinyl-app/OCR/images_vinyles/._473333807_3951798028438975_4013947429191889646_n.jpg`` with iomode `r`.
+Based on the extension, the following plugins might add capable backends:
+  pyav:  pip install imageio[pyav]
+2025-01-14 11:39:15,360 - INFO - Traitement de l'image : 473765877_633287982563814_3465078170660037976_n.jpg
+2025-01-14 11:39:15,788 - INFO - Nombre de textes détectés : 22
+2025-01-14 11:39:15,788 - INFO - Texte détecté : "8" (Probabilité: 0.70)
+2025-01-14 11:39:15,788 - INFO - Texte détecté : """ (Probabilité: 0.64)
+2025-01-14 11:39:15,788 - INFO - Texte détecté : "{" (Probabilité: 0.87)
+2025-01-14 11:39:15,788 - INFO - Texte détecté : "1" (Probabilité: 0.98)
+2025-01-14 11:39:15,788 - INFO - Texte détecté : "1" (Probabilité: 0.90)
+2025-01-14 11:39:15,788 - INFO - Texte détecté : "{" (Probabilité: 0.72)
+2025-01-14 11:39:15,788 - INFO - Texte détecté : "1" (Probabilité: 0.76)
+2025-01-14 11:39:15,788 - INFO - Texte détecté : "?" (Probabilité: 0.62)
+2025-01-14 11:39:15,788 - INFO - Traitement de l'image : ._473765877_633287982563814_3465078170660037976_n.jpg
+2025-01-14 11:39:15,793 - ERROR - Erreur lors du traitement de ._473765877_633287982563814_3465078170660037976_n.jpg: Could not find a backend to open `/Volumes/T7/DIG/vinyl-app/OCR/images_vinyles/._473765877_633287982563814_3465078170660037976_n.jpg`` with iomode `r`.
+Based on the extension, the following plugins might add capable backends:
+  pyav:  pip install imageio[pyav]
+2025-01-14 11:39:15,793 - INFO - Traitement OCR terminé avec succès
+2025-01-14 11:47:01,342 - INFO - Initialisation du lecteur OCR avec les modèles stockés dans : /Volumes/T7/DIG/vinyl-app/OCR/models
+2025-01-14 11:47:01,372 - ERROR - Erreur lors de l'initialisation du lecteur : Missing /Volumes/T7/DIG/vinyl-app/OCR/models/craft_mlt_25k.pth and downloads disabled
+2025-01-14 11:47:01,372 - ERROR - Erreur générale : Échec de l'initialisation du lecteur OCR
+2025-01-14 11:47:01,372 - ERROR - Le traitement OCR a échoué
+2025-01-14 11:48:35,029 - INFO - Initialisation du lecteur OCR avec les modèles stockés dans : /Volumes/T7/DIG/vinyl-app/OCR/models
+2025-01-14 11:48:35,029 - INFO - Modèles non trouvés, téléchargement en cours...
+2025-01-14 11:48:35,042 - WARNING - Downloading detection model, please wait. This may take several minutes depending upon your network connection.
+2025-01-14 11:48:37,738 - INFO - Download complete
+2025-01-14 11:48:37,738 - WARNING - Downloading recognition model, please wait. This may take several minutes depending upon your network connection.
+2025-01-14 11:48:38,720 - INFO - Download complete.
+2025-01-14 11:48:40,604 - INFO - Dossier d'images à traiter : /Volumes/T7/DIG/vinyl-app/OCR/images_vinyles
+2025-01-14 11:48:40,604 - INFO - Traitement de l'image : 472776803_1707958683394988_8295370929371328162_n.jpg
+2025-01-14 11:48:41,689 - INFO - Nombre de textes détectés : 21
+2025-01-14 11:48:41,689 - INFO - Traitement de l'image : 472800098_514475801653801_2213864537763132373_n.jpg
+2025-01-14 11:48:45,889 - INFO - Nombre de textes détectés : 76
+2025-01-14 11:48:45,890 - INFO - Traitement de l'image : 472881689_434452202967845_2737869948002468998_n.jpg
+2025-01-14 11:48:46,397 - INFO - Nombre de textes détectés : 14
+2025-01-14 11:48:46,397 - INFO - Traitement de l'image : 472925532_1279709286615626_5253478396869509952_n.jpg
+2025-01-14 11:48:46,880 - INFO - Nombre de textes détectés : 15
+2025-01-14 11:48:46,880 - INFO - Traitement de l'image : 473333807_3951798028438975_4013947429191889646_n.jpg
+2025-01-14 11:48:47,459 - INFO - Nombre de textes détectés : 11
+2025-01-14 11:48:47,459 - INFO - Traitement de l'image : 473765877_633287982563814_3465078170660037976_n.jpg
+2025-01-14 11:48:47,885 - INFO - Nombre de textes détectés : 22
+2025-01-14 11:48:47,885 - INFO - Traitement OCR terminé avec succès
+2025-01-14 11:48:47,885 - INFO - Images traitées avec succès : 6/6
+2025-01-14 11:52:04,377 - INFO - Initialisation du lecteur OCR avec les modèles stockés dans : /Volumes/T7/DIG/vinyl-app/OCR/models
+2025-01-14 11:52:06,491 - INFO - Traitement de l'image : 472776803_1707958683394988_8295370929371328162_n.jpg
+2025-01-14 11:52:07,627 - INFO - Nombre de textes détectés : 21
+2025-01-14 11:52:07,627 - INFO - Texte détecté : "suntune" (Probabilité: 1.00)
+2025-01-14 11:52:07,627 - INFO - Texte détecté : "Elevared" (Probabilité: 0.84)
+2025-01-14 11:52:07,627 - INFO - Traitement de l'image : 472800098_514475801653801_2213864537763132373_n.jpg
+2025-01-14 11:52:09,626 - INFO - Nombre de textes détectés : 72
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "Jhon" (Probabilité: 1.00)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "Jhon" (Probabilité: 1.00)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "Fair" (Probabilité: 1.00)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "DHAR" (Probabilité: 1.00)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "BRAXTON" (Probabilité: 1.00)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "for" (Probabilité: 1.00)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "BACK" (Probabilité: 1.00)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "Robert" (Probabilité: 0.99)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "Fair" (Probabilité: 0.99)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "Prod" (Probabilité: 0.99)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "bY" (Probabilité: 0.97)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "(SET" (Probabilité: 0.96)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "ME" (Probabilité: 0.96)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "Recorded" (Probabilité: 0.90)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "Club" (Probabilité: 0.87)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "al" (Probabilité: 0.84)
+2025-01-14 11:52:09,626 - INFO - Texte détecté : "by" (Probabilité: 0.80)
+2025-01-14 11:52:09,627 - INFO - Texte détecté : "Guest" (Probabilité: 0.75)
+2025-01-14 11:52:09,627 - INFO - Texte détecté : "SLX-oooiox" (Probabilité: 0.72)
+2025-01-14 11:52:09,627 - INFO - Texte détecté : "Acoustilog ," (Probabilité: 0.72)
+2025-01-14 11:52:09,627 - INFO - Texte détecté : "Fair" (Probabilité: 0.70)
+2025-01-14 11:52:09,665 - INFO - Traitement de l'image : 472881689_434452202967845_2737869948002468998_n.jpg
+2025-01-14 11:52:10,176 - INFO - Nombre de textes détectés : 13
+2025-01-14 11:52:10,176 - INFO - Texte détecté : "1" (Probabilité: 0.98)
+2025-01-14 11:52:10,176 - INFO - Texte détecté : "1" (Probabilité: 0.91)
+2025-01-14 11:52:10,176 - INFO - Texte détecté : "2" (Probabilité: 0.85)
+2025-01-14 11:52:10,176 - INFO - Texte détecté : "5" (Probabilité: 0.81)
+2025-01-14 11:52:10,176 - INFO - Texte détecté : "2" (Probabilité: 0.71)
+2025-01-14 11:52:10,176 - INFO - Traitement de l'image : 472925532_1279709286615626_5253478396869509952_n.jpg
+2025-01-14 11:52:10,742 - INFO - Nombre de textes détectés : 15
+2025-01-14 11:52:10,742 - INFO - Texte détecté : "Dejes" (Probabilité: 1.00)
+2025-01-14 11:52:10,742 - INFO - Texte détecté : "Querer"" (Probabilité: 0.97)
+2025-01-14 11:52:10,742 - INFO - Texte détecté : "Eslelan" (Probabilité: 0.76)
+2025-01-14 11:52:10,779 - INFO - Traitement de l'image : 473333807_3951798028438975_4013947429191889646_n.jpg
+2025-01-14 11:52:11,388 - INFO - Nombre de textes détectés : 11
+2025-01-14 11:52:11,388 - INFO - Texte détecté : "& D.J. THE BOY" (Probabilité: 0.71)
+2025-01-14 11:52:11,388 - INFO - Traitement de l'image : 473765877_633287982563814_3465078170660037976_n.jpg
+2025-01-14 11:52:11,821 - INFO - Nombre de textes détectés : 23
+2025-01-14 11:52:11,821 - INFO - Texte détecté : "1" (Probabilité: 1.00)
+2025-01-14 11:52:11,821 - INFO - Texte détecté : "1" (Probabilité: 0.94)
+2025-01-14 11:52:11,821 - INFO - Texte détecté : "{" (Probabilité: 0.87)
+2025-01-14 11:52:11,821 - INFO - Texte détecté : "8" (Probabilité: 0.83)
+2025-01-14 11:52:11,821 - INFO - Texte détecté : "1" (Probabilité: 0.77)
+2025-01-14 11:52:11,821 - INFO - Texte détecté : "1" (Probabilité: 0.71)
+2025-01-14 11:52:11,858 - INFO - Traitement OCR terminé avec succès
+2025-01-14 11:52:11,858 - INFO - Images traitées avec succès : 6/6
+2025-01-14 11:55:20,765 - INFO - Initialisation du lecteur OCR avec les modèles stockés dans : /Volumes/T7/DIG/vinyl-app/OCR/models
+2025-01-14 11:55:22,896 - INFO - 
+Traitement de l'image : love-peace-orchestra.jpg
+2025-01-14 11:55:23,620 - INFO - Nombre de textes détectés : 23
+2025-01-14 11:55:23,620 - INFO - Texte détecté : "1" (Probabilité: 1.00)
+2025-01-14 11:55:23,620 - INFO - Texte détecté : "1" (Probabilité: 0.94)
+2025-01-14 11:55:23,620 - INFO - Texte détecté : "{" (Probabilité: 0.87)
+2025-01-14 11:55:23,620 - INFO - Texte détecté : "8" (Probabilité: 0.83)
+2025-01-14 11:55:23,620 - INFO - Texte détecté : "1" (Probabilité: 0.77)
+2025-01-14 11:55:23,620 - INFO - Texte détecté : "1" (Probabilité: 0.71)
+2025-01-14 11:55:23,620 - INFO - 
+Texte combiné pour love-peace-orchestra.jpg:
+2025-01-14 11:55:23,620 - INFO - 8 { 1 1 1 1
+2025-01-14 11:55:23,620 - INFO - 
+Traitement de l'image : boris-dlugosch.jpg
+2025-01-14 11:55:24,521 - INFO - Nombre de textes détectés : 21
+2025-01-14 11:55:24,521 - INFO - Texte détecté : "suntune" (Probabilité: 1.00)
+2025-01-14 11:55:24,521 - INFO - Texte détecté : "Elevared" (Probabilité: 0.84)
+2025-01-14 11:55:24,521 - INFO - 
+Texte combiné pour boris-dlugosch.jpg:
+2025-01-14 11:55:24,521 - INFO - suntune Elevared
+2025-01-14 11:55:24,561 - INFO - 
+Traitement de l'image : dhar-braxton.jpg
+2025-01-14 11:55:26,435 - INFO - Nombre de textes détectés : 72
+2025-01-14 11:55:26,435 - INFO - Texte détecté : "Jhon" (Probabilité: 1.00)
+2025-01-14 11:55:26,435 - INFO - Texte détecté : "Jhon" (Probabilité: 1.00)
+2025-01-14 11:55:26,435 - INFO - Texte détecté : "Fair" (Probabilité: 1.00)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "DHAR" (Probabilité: 1.00)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "BRAXTON" (Probabilité: 1.00)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "for" (Probabilité: 1.00)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "BACK" (Probabilité: 1.00)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "Robert" (Probabilité: 0.99)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "Fair" (Probabilité: 0.99)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "Prod" (Probabilité: 0.99)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "bY" (Probabilité: 0.97)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "(SET" (Probabilité: 0.96)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "ME" (Probabilité: 0.96)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "Recorded" (Probabilité: 0.90)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "Club" (Probabilité: 0.87)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "al" (Probabilité: 0.84)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "by" (Probabilité: 0.80)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "Guest" (Probabilité: 0.75)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "SLX-oooiox" (Probabilité: 0.72)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "Acoustilog ," (Probabilité: 0.72)
+2025-01-14 11:55:26,436 - INFO - Texte détecté : "Fair" (Probabilité: 0.70)
+2025-01-14 11:55:26,436 - INFO - 
+Texte combiné pour dhar-braxton.jpg:
+2025-01-14 11:55:26,436 - INFO - Fair by bY al BRAXTON DHAR ME (SET BACK SLX-oooiox Club Fair Jhon for Robert Jhon Fair Acoustilog , Prod Recorded Guest
+2025-01-14 11:55:26,436 - INFO - 
+Traitement de l'image : love-got-me-high.jpg
+2025-01-14 11:55:26,918 - INFO - Nombre de textes détectés : 13
+2025-01-14 11:55:26,918 - INFO - Texte détecté : "1" (Probabilité: 0.98)
+2025-01-14 11:55:26,918 - INFO - Texte détecté : "1" (Probabilité: 0.91)
+2025-01-14 11:55:26,918 - INFO - Texte détecté : "2" (Probabilité: 0.85)
+2025-01-14 11:55:26,918 - INFO - Texte détecté : "5" (Probabilité: 0.81)
+2025-01-14 11:55:26,918 - INFO - Texte détecté : "2" (Probabilité: 0.71)
+2025-01-14 11:55:26,918 - INFO - 
+Texte combiné pour love-got-me-high.jpg:
+2025-01-14 11:55:26,918 - INFO - 1 1 5 2 2
+2025-01-14 11:55:26,963 - INFO - 
+Traitement de l'image : gloria-estafan.jpg
+2025-01-14 11:55:27,504 - INFO - Nombre de textes détectés : 15
+2025-01-14 11:55:27,504 - INFO - Texte détecté : "Dejes" (Probabilité: 1.00)
+2025-01-14 11:55:27,504 - INFO - Texte détecté : "Querer"" (Probabilité: 0.97)
+2025-01-14 11:55:27,504 - INFO - Texte détecté : "Eslelan" (Probabilité: 0.76)
+2025-01-14 11:55:27,504 - INFO - 
+Texte combiné pour gloria-estafan.jpg:
+2025-01-14 11:55:27,504 - INFO - Eslelan Querer" Dejes
+2025-01-14 11:55:27,504 - INFO - 
+Traitement de l'image : white-boy-mike.jpg
+2025-01-14 11:55:28,081 - INFO - Nombre de textes détectés : 11
+2025-01-14 11:55:28,081 - INFO - Texte détecté : "& D.J. THE BOY" (Probabilité: 0.71)
+2025-01-14 11:55:28,081 - INFO - 
+Texte combiné pour white-boy-mike.jpg:
+2025-01-14 11:55:28,081 - INFO - & D.J. THE BOY
+2025-01-14 11:55:28,122 - INFO - 
+Résumé du traitement OCR:
+2025-01-14 11:55:28,122 - INFO - 
+love-peace-orchestra.jpg:
+2025-01-14 11:55:28,122 - INFO - Texte combiné: 8 { 1 1 1 1
+2025-01-14 11:55:28,122 - INFO - 
+boris-dlugosch.jpg:
+2025-01-14 11:55:28,122 - INFO - Texte combiné: suntune Elevared
+2025-01-14 11:55:28,122 - INFO - 
+dhar-braxton.jpg:
+2025-01-14 11:55:28,122 - INFO - Texte combiné: Fair by bY al BRAXTON DHAR ME (SET BACK SLX-oooiox Club Fair Jhon for Robert Jhon Fair Acoustilog , Prod Recorded Guest
+2025-01-14 11:55:28,122 - INFO - 
+love-got-me-high.jpg:
+2025-01-14 11:55:28,122 - INFO - Texte combiné: 1 1 5 2 2
+2025-01-14 11:55:28,122 - INFO - 
+gloria-estafan.jpg:
+2025-01-14 11:55:28,122 - INFO - Texte combiné: Eslelan Querer" Dejes
+2025-01-14 11:55:28,122 - INFO - 
+white-boy-mike.jpg:
+2025-01-14 11:55:28,123 - INFO - Texte combiné: & D.J. THE BOY
+2025-01-14 11:55:28,123 - INFO - 
+Images traitées avec succès : 6/6
+2025-01-14 11:56:29,564 - INFO - Initialisation du lecteur OCR avec les modèles stockés dans : /Volumes/T7/DIG/vinyl-app/OCR/models
+2025-01-14 11:56:31,724 - INFO - 
+Traitement de l'image : love-peace-orchestra.jpg
+2025-01-14 11:56:32,441 - INFO - Nombre de textes détectés : 23
+2025-01-14 11:56:32,441 - INFO - Texte détecté : "1" (Probabilité: 1.00)
+2025-01-14 11:56:32,441 - INFO - Texte détecté : "1" (Probabilité: 0.94)
+2025-01-14 11:56:32,441 - INFO - Texte détecté : "{" (Probabilité: 0.87)
+2025-01-14 11:56:32,441 - INFO - Texte détecté : "8" (Probabilité: 0.83)
+2025-01-14 11:56:32,441 - INFO - Texte détecté : "1" (Probabilité: 0.77)
+2025-01-14 11:56:32,441 - INFO - Texte détecté : "1" (Probabilité: 0.71)
+2025-01-14 11:56:32,441 - INFO - 
+Texte combiné pour love-peace-orchestra.jpg:
+2025-01-14 11:56:32,441 - INFO - 8 { 1 1 1 1
+2025-01-14 11:56:32,441 - INFO - 
+Traitement de l'image : boris-dlugosch.jpg
+2025-01-14 11:56:33,386 - INFO - Nombre de textes détectés : 21
+2025-01-14 11:56:33,386 - INFO - Texte détecté : "suntune" (Probabilité: 1.00)
+2025-01-14 11:56:33,386 - INFO - Texte détecté : "Elevared" (Probabilité: 0.84)
+2025-01-14 11:56:33,386 - INFO - 
+Texte combiné pour boris-dlugosch.jpg:
+2025-01-14 11:56:33,386 - INFO - suntune Elevared
+2025-01-14 11:56:33,426 - INFO - 
+Traitement de l'image : dhar-braxton.jpg
+2025-01-14 11:56:35,087 - INFO - Nombre de textes détectés : 72
+2025-01-14 11:56:35,087 - INFO - Texte détecté : "Jhon" (Probabilité: 1.00)
+2025-01-14 11:56:35,087 - INFO - Texte détecté : "Jhon" (Probabilité: 1.00)
+2025-01-14 11:56:35,087 - INFO - Texte détecté : "Fair" (Probabilité: 1.00)
+2025-01-14 11:56:35,087 - INFO - Texte détecté : "DHAR" (Probabilité: 1.00)
+2025-01-14 11:56:35,087 - INFO - Texte détecté : "BRAXTON" (Probabilité: 1.00)
+2025-01-14 11:56:35,087 - INFO - Texte détecté : "for" (Probabilité: 1.00)
+2025-01-14 11:56:35,087 - INFO - Texte détecté : "BACK" (Probabilité: 1.00)
+2025-01-14 11:56:35,087 - INFO - Texte détecté : "Robert" (Probabilité: 0.99)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "Fair" (Probabilité: 0.99)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "Prod" (Probabilité: 0.99)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "bY" (Probabilité: 0.97)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "(SET" (Probabilité: 0.96)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "ME" (Probabilité: 0.96)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "Recorded" (Probabilité: 0.90)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "Club" (Probabilité: 0.87)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "al" (Probabilité: 0.84)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "by" (Probabilité: 0.80)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "Guest" (Probabilité: 0.75)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "SLX-oooiox" (Probabilité: 0.72)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "Acoustilog ," (Probabilité: 0.72)
+2025-01-14 11:56:35,088 - INFO - Texte détecté : "Fair" (Probabilité: 0.70)
+2025-01-14 11:56:35,088 - INFO - 
+Texte combiné pour dhar-braxton.jpg:
+2025-01-14 11:56:35,088 - INFO - Fair by bY al BRAXTON DHAR ME (SET BACK SLX-oooiox Club Fair Jhon for Robert Jhon Fair Acoustilog , Prod Recorded Guest
+2025-01-14 11:56:35,088 - INFO - 
+Traitement de l'image : love-got-me-high.jpg
+2025-01-14 11:56:35,602 - INFO - Nombre de textes détectés : 13
+2025-01-14 11:56:35,602 - INFO - Texte détecté : "1" (Probabilité: 0.98)
+2025-01-14 11:56:35,602 - INFO - Texte détecté : "1" (Probabilité: 0.91)
+2025-01-14 11:56:35,602 - INFO - Texte détecté : "2" (Probabilité: 0.85)
+2025-01-14 11:56:35,602 - INFO - Texte détecté : "5" (Probabilité: 0.81)
+2025-01-14 11:56:35,602 - INFO - Texte détecté : "2" (Probabilité: 0.71)
+2025-01-14 11:56:35,602 - INFO - 
+Texte combiné pour love-got-me-high.jpg:
+2025-01-14 11:56:35,602 - INFO - 1 1 5 2 2
+2025-01-14 11:56:35,641 - INFO - 
+Traitement de l'image : gloria-estafan.jpg
+2025-01-14 11:56:36,182 - INFO - Nombre de textes détectés : 15
+2025-01-14 11:56:36,182 - INFO - Texte détecté : "Dejes" (Probabilité: 1.00)
+2025-01-14 11:56:36,182 - INFO - Texte détecté : "Querer"" (Probabilité: 0.97)
+2025-01-14 11:56:36,182 - INFO - Texte détecté : "Eslelan" (Probabilité: 0.76)
+2025-01-14 11:56:36,182 - INFO - 
+Texte combiné pour gloria-estafan.jpg:
+2025-01-14 11:56:36,182 - INFO - Eslelan Querer" Dejes
+2025-01-14 11:56:36,182 - INFO - 
+Traitement de l'image : white-boy-mike.jpg
+2025-01-14 11:56:36,758 - INFO - Nombre de textes détectés : 11
+2025-01-14 11:56:36,758 - INFO - Texte détecté : "& D.J. THE BOY" (Probabilité: 0.71)
+2025-01-14 11:56:36,758 - INFO - 
+Texte combiné pour white-boy-mike.jpg:
+2025-01-14 11:56:36,758 - INFO - & D.J. THE BOY
+2025-01-14 11:56:36,797 - INFO - 
+==================================================
+2025-01-14 11:56:36,797 - INFO - RÉSULTATS DU TRAITEMENT OCR
+2025-01-14 11:56:36,797 - INFO - ==================================================
+2025-01-14 11:56:36,797 - INFO - 
+--------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - Image : love-peace-orchestra.jpg
+2025-01-14 11:56:36,797 - INFO - Texte détecté : 8 { 1 1 1 1
+2025-01-14 11:56:36,797 - INFO - 
+Informations vinyle détectées :
+2025-01-14 11:56:36,797 - INFO - - Artiste : 1
+2025-01-14 11:56:36,797 - INFO - - Titre  : 1
+2025-01-14 11:56:36,797 - INFO - --------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - 
+--------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - Image : boris-dlugosch.jpg
+2025-01-14 11:56:36,797 - INFO - Texte détecté : suntune Elevared
+2025-01-14 11:56:36,797 - INFO - 
+Informations vinyle détectées :
+2025-01-14 11:56:36,797 - INFO - - Artiste : suntune
+2025-01-14 11:56:36,797 - INFO - --------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - 
+--------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - Image : dhar-braxton.jpg
+2025-01-14 11:56:36,797 - INFO - Texte détecté : Fair by bY al BRAXTON DHAR ME (SET BACK SLX-oooiox Club Fair Jhon for Robert Jhon Fair Acoustilog , Prod Recorded Guest
+2025-01-14 11:56:36,797 - INFO - 
+Informations vinyle détectées :
+2025-01-14 11:56:36,797 - INFO - - Artiste : Jhon
+2025-01-14 11:56:36,797 - INFO - - Titre  : Jhon
+2025-01-14 11:56:36,797 - INFO - --------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - 
+--------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - Image : love-got-me-high.jpg
+2025-01-14 11:56:36,797 - INFO - Texte détecté : 1 1 5 2 2
+2025-01-14 11:56:36,797 - INFO - 
+Informations vinyle détectées :
+2025-01-14 11:56:36,797 - INFO - - Artiste : 1
+2025-01-14 11:56:36,797 - INFO - - Titre  : 1
+2025-01-14 11:56:36,797 - INFO - --------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - 
+--------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - Image : gloria-estafan.jpg
+2025-01-14 11:56:36,797 - INFO - Texte détecté : Eslelan Querer" Dejes
+2025-01-14 11:56:36,797 - INFO - 
+Informations vinyle détectées :
+2025-01-14 11:56:36,797 - INFO - - Artiste : Dejes
+2025-01-14 11:56:36,797 - INFO - - Titre  : Querer"
+2025-01-14 11:56:36,797 - INFO - --------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - 
+--------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - Image : white-boy-mike.jpg
+2025-01-14 11:56:36,797 - INFO - Texte détecté : & D.J. THE BOY
+2025-01-14 11:56:36,797 - INFO - --------------------------------------------------
+2025-01-14 11:56:36,797 - INFO - 
+Images traitées avec succès : 6/6
+2025-01-14 16:40:25,313 - INFO - Initialisation du lecteur OCR avec les modèles stockés dans : /Volumes/T7/DIG/vinyl-app/OCR/models
+2025-01-14 16:40:27,429 - INFO - 
+Traitement de l'image : love-peace-orchestra.jpg
+2025-01-14 16:40:35,801 - INFO - input 1: 499.189935, 414.844156
+2025-01-14 16:40:38,513 - INFO - input 2: 498.685877, 416.860390
+2025-01-14 16:40:39,183 - INFO - 
+Texte combiné pour love-peace-orchestra.jpg:
+2025-01-14 16:40:39,184 - INFO - 
+2025-01-14 16:40:39,184 - INFO - 
+Traitement de l'image : boris-dlugosch.jpg
+2025-01-14 16:40:43,853 - INFO - input 1: 138.396104, 481.603896
+2025-01-14 16:40:45,196 - INFO - input 2: 648.279221, 577.487013
+2025-01-14 16:40:45,507 - INFO - 
+Texte combiné pour boris-dlugosch.jpg:
+2025-01-14 16:40:45,507 - INFO - 
+2025-01-14 16:40:45,556 - INFO - 
+Traitement de l'image : dhar-braxton.jpg
+2025-01-14 16:40:50,163 - INFO - input 1: 289.110390, 698.201299
+2025-01-14 16:40:52,226 - INFO - input 2: 934.564935, 650.149351
+2025-01-14 16:40:52,604 - INFO - 
+Texte combiné pour dhar-braxton.jpg:
+2025-01-14 16:40:52,604 - INFO - 
+2025-01-14 16:40:52,604 - INFO - 
+Traitement de l'image : love-got-me-high.jpg
+2025-01-14 16:40:56,260 - INFO - input 1: 404.538961, 896.500000
+2025-01-14 16:40:57,383 - INFO - input 2: 591.824675, 703.837662
+2025-01-14 16:40:57,766 - INFO - Texte détecté : "2" (Probabilité: 0.74)
+2025-01-14 16:40:57,766 - INFO - Texte détecté : "&" (Probabilité: 0.72)
+2025-01-14 16:40:57,766 - INFO - 
+Texte combiné pour love-got-me-high.jpg:
+2025-01-14 16:40:57,766 - INFO - & 2
+2025-01-14 16:40:57,810 - INFO - 
+Traitement de l'image : gloria-estafan.jpg
+2025-01-14 16:40:59,230 - INFO - input 1: 208.292208, 631.253247
+2025-01-14 16:41:00,010 - INFO - input 2: 713.694805, 642.006494
+2025-01-14 16:41:00,437 - INFO - 
+Texte combiné pour gloria-estafan.jpg:
+2025-01-14 16:41:00,437 - INFO - 
+2025-01-14 16:41:00,437 - INFO - 
+Traitement de l'image : white-boy-mike.jpg
+2025-01-14 16:41:01,559 - INFO - input 1: 455.616883, 486.980519
+2025-01-14 16:41:02,907 - INFO - input 2: 728.928571, 566.733766
+2025-01-14 16:41:03,190 - INFO - 
+Texte combiné pour white-boy-mike.jpg:
+2025-01-14 16:41:03,190 - INFO - 
+2025-01-14 16:41:03,232 - INFO - 
+==================================================
+2025-01-14 16:41:03,232 - INFO - RÉSULTATS DU TRAITEMENT OCR
+2025-01-14 16:41:03,233 - INFO - ==================================================
+2025-01-14 16:41:03,233 - INFO - 
+--------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - Image : love-peace-orchestra.jpg
+2025-01-14 16:41:03,233 - INFO - Texte détecté : 
+2025-01-14 16:41:03,233 - INFO - --------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - 
+--------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - Image : boris-dlugosch.jpg
+2025-01-14 16:41:03,233 - INFO - Texte détecté : 
+2025-01-14 16:41:03,233 - INFO - --------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - 
+--------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - Image : dhar-braxton.jpg
+2025-01-14 16:41:03,233 - INFO - Texte détecté : 
+2025-01-14 16:41:03,233 - INFO - --------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - 
+--------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - Image : love-got-me-high.jpg
+2025-01-14 16:41:03,233 - INFO - Texte détecté : & 2
+2025-01-14 16:41:03,233 - INFO - --------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - 
+--------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - Image : gloria-estafan.jpg
+2025-01-14 16:41:03,233 - INFO - Texte détecté : 
+2025-01-14 16:41:03,233 - INFO - --------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - 
+--------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - Image : white-boy-mike.jpg
+2025-01-14 16:41:03,233 - INFO - Texte détecté : 
+2025-01-14 16:41:03,233 - INFO - --------------------------------------------------
+2025-01-14 16:41:03,233 - INFO - 
+Images traitées avec succès : 6/6
+2025-01-14 16:42:36,222 - INFO - Initialisation du lecteur OCR avec les modèles stockés dans : /Volumes/T7/DIG/vinyl-app/OCR/models
+2025-01-14 16:42:38,285 - INFO - 
+Traitement de l'image : love-peace-orchestra.jpg
+2025-01-14 16:42:41,680 - INFO - input 1: 601.009740, 114.929383
+2025-01-14 16:42:43,220 - INFO - input 2: 483.060065, 392.161526
+2025-01-14 16:42:44,169 - INFO - input 3: 444.751623, 382.584416
+2025-01-14 16:42:45,724 - INFO - input 4: 560.685065, 96.279221
+2025-01-14 16:42:46,306 - INFO - Texte détecté : "1" (Probabilité: 0.95)
+2025-01-14 16:42:46,306 - INFO - Texte détecté : "{" (Probabilité: 0.91)
+2025-01-14 16:42:46,306 - INFO - 
+Texte combiné pour love-peace-orchestra.jpg:
+2025-01-14 16:42:46,306 - INFO - { 1
+2025-01-14 16:42:46,307 - INFO - 
+Traitement de l'image : boris-dlugosch.jpg
+2025-01-14 16:42:47,680 - INFO - input 1: 165.279221, 497.733766
+2025-01-14 16:42:48,703 - INFO - input 2: 627.668831, 495.941558
+2025-01-14 16:42:49,432 - INFO - input 3: 629.461039, 553.292208
+2025-01-14 16:42:50,609 - INFO - input 4: 171.551948, 557.772727
+2025-01-14 16:42:50,901 - INFO - 
+Texte combiné pour boris-dlugosch.jpg:
+2025-01-14 16:42:50,901 - INFO - 
+2025-01-14 16:42:50,945 - INFO - 
+Traitement de l'image : dhar-braxton.jpg
+2025-01-14 16:42:53,054 - INFO - input 1: 391.707792, 842.357143
+2025-01-14 16:42:55,064 - INFO - input 2: 885.214286, 656.642857
+2025-01-14 16:42:56,230 - INFO - input 3: 807.292208, 529.370130
+2025-01-14 16:42:57,576 - INFO - input 4: 305.993506, 698.201299
+2025-01-14 16:42:57,974 - INFO - Texte détecté : "DHAR" (Probabilité: 1.00)
+2025-01-14 16:42:57,975 - INFO - Texte détecté : "BRAXTON" (Probabilité: 1.00)
+2025-01-14 16:42:57,975 - INFO - Texte détecté : "BACK" (Probabilité: 1.00)
+2025-01-14 16:42:57,975 - INFO - 
+Texte combiné pour dhar-braxton.jpg:
+2025-01-14 16:42:57,975 - INFO - BRAXTON DHAR BACK
+2025-01-14 16:42:57,975 - INFO - 
+Traitement de l'image : love-got-me-high.jpg
+2025-01-14 16:42:59,708 - INFO - input 1: 399.162338, 887.538961
+2025-01-14 16:43:00,541 - INFO - input 2: 523.720779, 668.889610
+2025-01-14 16:43:02,131 - INFO - input 3: 578.383117, 685.019481
+2025-01-14 16:43:03,478 - INFO - input 4: 466.370130, 939.512987
+2025-01-14 16:43:03,796 - INFO - 
+Texte combiné pour love-got-me-high.jpg:
+2025-01-14 16:43:03,796 - INFO - 
+2025-01-14 16:43:03,840 - INFO - 
+Traitement de l'image : gloria-estafan.jpg
+2025-01-14 16:43:06,988 - INFO - input 1: 228.006494, 624.980519
+2025-01-14 16:43:08,068 - INFO - input 2: 366.006494, 874.097403
+2025-01-14 16:43:10,201 - INFO - input 3: 710.110390, 657.240260
+2025-01-14 16:43:11,023 - INFO - input 4: 536.266234, 445.759740
+2025-01-14 16:43:11,380 - INFO - Texte détecté : "Dejes" (Probabilité: 0.86)
+2025-01-14 16:43:11,380 - INFO - 
+Texte combiné pour gloria-estafan.jpg:
+2025-01-14 16:43:11,380 - INFO - Dejes
+2025-01-14 16:43:11,380 - INFO - 
+Traitement de l'image : white-boy-mike.jpg
+2025-01-14 16:43:12,920 - INFO - input 1: 444.863636, 470.850649
+2025-01-14 16:43:13,922 - INFO - input 2: 731.616883, 474.435065
+2025-01-14 16:43:14,939 - INFO - input 3: 734.305195, 585.551948
+2025-01-14 16:43:16,077 - INFO - input 4: 452.032468, 571.214286
+2025-01-14 16:43:16,423 - INFO - Texte détecté : "WHITE BOY Mxe" (Probabilité: 0.74)
+2025-01-14 16:43:16,423 - INFO - 
+Texte combiné pour white-boy-mike.jpg:
+2025-01-14 16:43:16,423 - INFO - WHITE BOY Mxe
+2025-01-14 16:43:16,465 - INFO - 
+==================================================
+2025-01-14 16:43:16,465 - INFO - RÉSULTATS DU TRAITEMENT OCR
+2025-01-14 16:43:16,465 - INFO - ==================================================
+2025-01-14 16:43:16,465 - INFO - 
+--------------------------------------------------
+2025-01-14 16:43:16,465 - INFO - Image : love-peace-orchestra.jpg
+2025-01-14 16:43:16,465 - INFO - Texte détecté : { 1
+2025-01-14 16:43:16,465 - INFO - 
+Informations vinyle détectées :
+2025-01-14 16:43:16,465 - INFO - - Artiste : 1
+2025-01-14 16:43:16,465 - INFO - - Titre  : {
+2025-01-14 16:43:16,466 - INFO - --------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - 
+--------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - Image : boris-dlugosch.jpg
+2025-01-14 16:43:16,466 - INFO - Texte détecté : 
+2025-01-14 16:43:16,466 - INFO - --------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - 
+--------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - Image : dhar-braxton.jpg
+2025-01-14 16:43:16,466 - INFO - Texte détecté : BRAXTON DHAR BACK
+2025-01-14 16:43:16,466 - INFO - 
+Informations vinyle détectées :
+2025-01-14 16:43:16,466 - INFO - - Artiste : DHAR
+2025-01-14 16:43:16,466 - INFO - - Titre  : BRAXTON
+2025-01-14 16:43:16,466 - INFO - --------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - 
+--------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - Image : love-got-me-high.jpg
+2025-01-14 16:43:16,466 - INFO - Texte détecté : 
+2025-01-14 16:43:16,466 - INFO - --------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - 
+--------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - Image : gloria-estafan.jpg
+2025-01-14 16:43:16,466 - INFO - Texte détecté : Dejes
+2025-01-14 16:43:16,466 - INFO - 
+Informations vinyle détectées :
+2025-01-14 16:43:16,466 - INFO - - Artiste : Dejes
+2025-01-14 16:43:16,466 - INFO - --------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - 
+--------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - Image : white-boy-mike.jpg
+2025-01-14 16:43:16,466 - INFO - Texte détecté : WHITE BOY Mxe
+2025-01-14 16:43:16,466 - INFO - --------------------------------------------------
+2025-01-14 16:43:16,466 - INFO - 
+Images traitées avec succès : 6/6

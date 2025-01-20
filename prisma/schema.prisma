@@ -1,0 +1,138 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String        @id @default(cuid())
+  name          String?
+  email         String        @unique
+  emailVerified DateTime?
+  image         String?
+  city          String?      
+  musicGenres   String?      // Stockage comme "Rock,Electronic,Funk"
+  accounts      Account[]
+  followers     Follows[]     @relation("UserFollowers")
+  following     Follows[]     @relation("UserFollowing")
+  sessions      Session[]
+  vinyls        VinylPosted[] // Vinyles postés par l'utilisateur
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Follows {
+  followerId  String
+  followingId String
+  createdAt   DateTime @default(now())
+  following   User     @relation("UserFollowers", fields: [followingId], references: [id], onDelete: Cascade)
+  follower    User     @relation("UserFollowing", fields: [followerId], references: [id], onDelete: Cascade)
+
+  @@id([followerId, followingId])
+  @@index([followerId])
+  @@index([followingId])
+}
+
+model VinylPosted {
+  id           String        @id @default(cuid())
+  title        String
+  artist       String
+  imageUrl     String?
+  year         Int?
+  genres       String
+  label        String?
+  discogsId    String
+  userId       String
+  comment      String?      
+  sourceType   String       @default("COLLECTION")  // COLLECTION, STORE, OTHER
+  storeId      String?      
+  customSource String?      
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  
+  // Relations
+  user         User         @relation(fields: [userId], references: [id])
+  store        RecordStore? @relation(fields: [storeId], references: [id])
+  storedIn     VinylStored[] // Les magasins qui ont ce vinyle en stock
+
+  @@index([userId])
+  @@index([discogsId])
+  @@index([storeId])
+}
+
+model RecordStore {
+  id                  String        @id @default(cuid())
+  name                String
+  address             String
+  city                String
+  latitude            Float
+  longitude           Float
+  phone               String?
+  website             String?
+  rating              Float?
+  reviewCount         Int?
+  status              String
+  openingHours        String?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  lastInventoryUpdate DateTime?
+  
+  // Relations
+  postedVinyls       VinylPosted[] // Vinyles postés depuis ce magasin
+  inventory          VinylStored[]  // Vinyles actuellement en vente
+
+  @@index([city])
+}
+
+model VinylStored {
+  id          String      @id
+  addedAt     DateTime    @default(now())
+  price       Float?
+  condition   String?
+  inStock     Boolean     @default(true)
+  storeId     String
+  vinylId     String
+  
+  // Relations
+  vinyl       VinylPosted @relation(fields: [vinylId], references: [id])
+  store       RecordStore @relation(fields: [storeId], references: [id])
+
+  @@unique([storeId, vinylId])
+  @@index([vinylId])
+  @@index([storeId])
+}
