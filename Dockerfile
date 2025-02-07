@@ -3,6 +3,11 @@
 # On utilise une image Alpine car elle est légère et optimisée
 FROM node:18-alpine AS builder
 
+# Ajout de la clé API OpenAI comme argument et variable d'environnement pour le build
+ARG OPENAI_API_KEY
+ENV OPENAI_API_KEY=$OPENAI_API_KEY
+RUN echo "OPENAI_API_KEY value during build: $OPENAI_API_KEY"
+
 # On définit le répertoire de travail pour toutes les commandes suivantes
 # Cela permet d'avoir un contexte cohérent pour l'installation
 WORKDIR /app
@@ -41,9 +46,10 @@ WORKDIR /app
 # Configuration de l'environnement de production
 ENV NODE_ENV=production
 
-# Ajout de la clé API OpenAI comme argument et variable d'environnement
+# Ajout de la clé API OpenAI comme argument et variable d'environnement pour la production
 ARG OPENAI_API_KEY
 ENV OPENAI_API_KEY=$OPENAI_API_KEY
+RUN echo "OPENAI_API_KEY value during production: $OPENAI_API_KEY"
 
 # Copie des fichiers nécessaires depuis l'étape de build
 # Les fichiers statiques comme les images sont copiés dans /public
