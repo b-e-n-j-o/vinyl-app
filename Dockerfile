@@ -47,13 +47,11 @@ COPY --from=builder /app/.next/standalone ./
 # Les assets JavaScript et CSS sont copiés dans le dossier .next/static
 COPY --from=builder /app/.next/static ./.next/static
 
-# Copier le script de démarrage
-COPY start.sh ./
-RUN chmod +x start.sh
-
+# Configuration du serveur de production
 ENV PORT=8080
 EXPOSE 8080
 ENV HOSTNAME="0.0.0.0"
 
-# Utiliser le script de démarrage
-CMD ["./start.sh"]
+# Démarrage de l'application
+# Node.js exécute le fichier server.js généré par Next.js
+CMD ["node", "server.js"]
