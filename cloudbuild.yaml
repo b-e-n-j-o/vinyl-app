@@ -1,0 +1,8 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', 
+         '--build-arg', 'OPENAI_API_KEY=${_OPENAI_API_KEY}',
+         '-t', 'gcr.io/$PROJECT_ID/vinyl-app', 
+         '.']
+substitutions:
+  _OPENAI_API_KEY: "sk-9uAfA6ABoa10Kiqwf9qMT3BlbkFJQqBy"  # Votre clé OpenAI

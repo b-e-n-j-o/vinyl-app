@@ -41,6 +41,10 @@ WORKDIR /app
 # Configuration de l'environnement de production
 ENV NODE_ENV=production
 
+# Ajout de la clé API OpenAI comme argument et variable d'environnement
+ARG OPENAI_API_KEY
+ENV OPENAI_API_KEY=$OPENAI_API_KEY
+
 # Copie des fichiers nécessaires depuis l'étape de build
 # Les fichiers statiques comme les images sont copiés dans /public
 COPY --from=builder /app/public ./public
