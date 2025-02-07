@@ -38,10 +38,11 @@ yarn-error.log*
 next-env.d.ts
 
 # JSON files (avec vos exceptions)
+# JSON files
 *.json
 !package.json
 !package-lock.json
-
+!tsconfig.json
 # Ajouts pour vos dossiers de développement
 /backups/
 /tmp/
