@@ -25,6 +25,8 @@ RUN npx prisma generate
 # Cette étape arrive après pour optimiser le cache Docker
 COPY . .
 
+RUN ls -la src/lib/
+
 # Construction de l'application Next.js
 # Cette étape optimise et compile tout le code pour la production
 RUN npm run build
