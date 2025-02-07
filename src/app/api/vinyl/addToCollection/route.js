@@ -1,6 +1,6 @@
 // app/api/vinyl/addToCollection/route.js
 import { NextResponse } from 'next/server'
-import prisma from '../../../../../src/lib/prisma'
+import prisma from '@/lib/prisma'
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from '../../auth/[...nextauth]/auth'
 
@@ -23,7 +23,6 @@ export async function POST(request) {
     })
     console.log('Commentaire:', data.comment)
 
-    // Validation des données
     if (!data || !data.vinyl) {
       return NextResponse.json(
         { error: 'Données invalides', receivedData: data },
@@ -31,7 +30,6 @@ export async function POST(request) {
       )
     }
 
-    // Vérification des champs requis
     const requiredFields = ['title', 'artist', 'discogsId']
     for (const field of requiredFields) {
       if (!data.vinyl[field]) {
@@ -43,7 +41,6 @@ export async function POST(request) {
     }
 
     try {
-      // Vérifier si le vinyle existe déjà dans la collection
       const existingVinyl = await prisma.vinylPosted.findFirst({
         where: {
           AND: [
@@ -60,7 +57,6 @@ export async function POST(request) {
         )
       }
 
-      // Créer le nouveau VinylPosted
       const newVinyl = await prisma.vinylPosted.create({
         data: {
           userId: session.user.id,
@@ -71,7 +67,7 @@ export async function POST(request) {
           genres: data.vinyl.genres,
           label: data.vinyl.label,
           discogsId: data.vinyl.discogsId,
-          comment: data.comment || 'Ajouté à ma collection',
+          comment: data.comment || null,
           sourceType: data.sourceType || 'COLLECTION',
           storeId: data.sourceType === 'STORE' ? data.storeId : null,
           customSource: data.sourceType === 'OTHER' ? data.customSource : null

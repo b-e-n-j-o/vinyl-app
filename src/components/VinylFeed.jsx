@@ -326,8 +326,10 @@ const VinylFeed = () => {
     const clickedCard = cards[clickedIndex]
     const lastCard = cards[cards.length - 1]
     
-    // Nombre de cartes à sauter
-    const cardsToSkip = displayedVinyls.length - 1 - clickedIndex
+    // Sauvegarder tous les vinyles qui vont être skippés dans l'historique
+    const vinylsToSave = displayedVinyls.slice(clickedIndex + 1).reverse()
+    setPreviousVinyls(prev => [...prev, ...vinylsToSave])
+    setCanGoBack(true)
 
     // Animation de sortie pour les cartes entre la carte cliquée et la dernière
     gsap.to(cards.slice(clickedIndex + 1), {
@@ -363,6 +365,8 @@ const VinylFeed = () => {
       onComplete: () => {
         // Mettre à jour l'état des vinyles affichés
         const newVinyls = [...displayedVinyls]
+        const cardsToSkip = displayedVinyls.length - 1 - clickedIndex
+        
         // Retirer les cartes jusqu'à la carte cliquée
         newVinyls.splice(clickedIndex + 1)
         

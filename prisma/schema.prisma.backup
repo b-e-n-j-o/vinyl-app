@@ -3,23 +3,23 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id            String       @id @default(cuid())
+  id            String        @id @default(cuid())
   name          String?
-  email         String       @unique
+  email         String        @unique
   emailVerified DateTime?
   image         String?
+  city          String?      
+  musicGenres   String?      // Stockage comme "Rock,Electronic,Funk"
   accounts      Account[]
-  followers     Follows[]    @relation("UserFollowers")
-  following     Follows[]    @relation("UserFollowing")
+  followers     Follows[]     @relation("UserFollowers")
+  following     Follows[]     @relation("UserFollowing")
   sessions      Session[]
-  VinylDig      VinylDig[]
-  vinyls        VinylPost[]
-  shares        VinylShare[]
+  vinyls        VinylPosted[] // Vinyles postés par l'utilisateur
 }
 
 model Account {
@@ -68,42 +68,35 @@ model Follows {
   @@index([followingId])
 }
 
-model VinylPost {
-  id         String       @id @default(cuid())
-  title      String
-  artist     String
-  imageUrl   String?
-  year       Int?
-  genres     String
-  label      String?
-  discogsId  String
-  userId     String
-  createdAt  DateTime     @default(now())
-  StoreVinyl StoreVinyl[]
-  VinylDig   VinylDig[]
-  user       User         @relation(fields: [userId], references: [id])
-  shares     VinylShare[]
+model VinylPosted {
+  id           String        @id @default(cuid())
+  title        String
+  artist       String
+  imageUrl     String?
+  year         Int?
+  genres       String
+  label        String?
+  discogsId    String
+  userId       String
+  comment      String?      
+  sourceType   String       @default("COLLECTION")  // COLLECTION, STORE, OTHER
+  storeId      String?      
+  customSource String?      
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  
+  // Relations
+  user         User         @relation(fields: [userId], references: [id])
+  store        RecordStore? @relation(fields: [storeId], references: [id])
+  storedIn     VinylStored[] // Les magasins qui ont ce vinyle en stock
 
   @@index([userId])
   @@index([discogsId])
-}
-
-model VinylShare {
-  id        String    @id @default(cuid())
-  comment   String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  vinylId   String
-  userId    String
-  user      User      @relation(fields: [userId], references: [id])
-  vinyl     VinylPost @relation(fields: [vinylId], references: [id])
-
-  @@index([vinylId])
-  @@index([userId])
+  @@index([storeId])
 }
 
 model RecordStore {
-  id                  String       @id @default(cuid())
+  id                  String        @id @default(cuid())
   name                String
   address             String
   city                String
@@ -115,16 +108,18 @@ model RecordStore {
   reviewCount         Int?
   status              String
   openingHours        String?
-  createdAt           DateTime     @default(now())
-  updatedAt           DateTime     @updatedAt
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
   lastInventoryUpdate DateTime?
-  StoreVinyl          StoreVinyl[]
-  VinylDig            VinylDig[]
+  
+  // Relations
+  postedVinyls       VinylPosted[] // Vinyles postés depuis ce magasin
+  inventory          VinylStored[]  // Vinyles actuellement en vente
 
   @@index([city])
 }
 
-model StoreVinyl {
+model VinylStored {
   id          String      @id
   addedAt     DateTime    @default(now())
   price       Float?
@@ -132,27 +127,12 @@ model StoreVinyl {
   inStock     Boolean     @default(true)
   storeId     String
   vinylId     String
-  VinylPost   VinylPost   @relation(fields: [vinylId], references: [id])
-  RecordStore RecordStore @relation(fields: [storeId], references: [id])
+  
+  // Relations
+  vinyl       VinylPosted @relation(fields: [vinylId], references: [id])
+  store       RecordStore @relation(fields: [storeId], references: [id])
 
   @@unique([storeId, vinylId])
-  @@index([vinylId])
-  @@index([storeId])
-}
-
-model VinylDig {
-  id          String      @id
-  comment     String?
-  diggedAt    DateTime    @default(now())
-  storeId     String
-  vinylId     String
-  userId      String
-  User        User        @relation(fields: [userId], references: [id])
-  VinylPost   VinylPost   @relation(fields: [vinylId], references: [id])
-  RecordStore RecordStore @relation(fields: [storeId], references: [id])
-
-  @@unique([userId, vinylId, storeId])
-  @@index([userId])
   @@index([vinylId])
   @@index([storeId])
 }

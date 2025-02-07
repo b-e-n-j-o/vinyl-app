@@ -1,7 +1,7 @@
 // app/collection/[userId]/page.js
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../../api/auth/[...nextauth]/auth"
-import prisma from "../../../../src/lib/prisma"
+import prisma from '@/lib/prisma'
 import Navbar from "../../../components/Navbar"
 import { notFound } from "next/navigation"
 import CollectionContent from "./CollectionContent"

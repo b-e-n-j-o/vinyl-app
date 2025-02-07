@@ -1,0 +1,7 @@
+.DS_Store
+._*
+.git
+.env
+node_modules
+npm_cache
+.next

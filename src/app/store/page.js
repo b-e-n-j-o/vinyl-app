@@ -1,24 +1,87 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { Search, MapPin, Phone, Globe, Star, ChevronDown } from 'lucide-react';
-import OpeningHours from './OpeningHours';
-import styles from './StorePage.module.css';
+import { Search, MapPin, ChevronDown } from 'lucide-react';
+import dynamic from 'next/dynamic';
 
-const Map = dynamic(() => import('../../components/Map'), {
-  loading: () => <div className="h-full w-full flex items-center justify-center">
-    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#6F4E37]"></div>
-  </div>,
-  ssr: false
-});
+// Ajout du style de carte minimaliste
+const mapStyle = [
+  {
+    "featureType": "all",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "all",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "all",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "on"
+      },
+      {
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "weight": "0.7"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "weight": "0.5"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "weight": "0.5"
+      }
+    ]
+  }
+];
 
 const AVAILABLE_CITIES = [
   'Bruxelles',
   'Paris',
   'Montréal',
-  // On peut facilement ajouter d'autres villes ici
 ];
 
 const CITY_COORDINATES = {
@@ -27,32 +90,43 @@ const CITY_COORDINATES = {
   'Paris': { latitude: 48.8566, longitude: 2.3522 }
 };
 
-export default function StoresPage() {
+const StoreMap = dynamic(
+  () => import('./OpenLayersMap'),
+  {
+    loading: () => (
+      <div className="flex items-center justify-center h-full w-full">
+        <div className="h-32 w-32 rounded-full bg-[#6F4E37]"></div>
+      </div>
+    ),
+    ssr: false
+  }
+);
+
+const StoresMapPage = () => {
   const [stores, setStores] = useState([]);
+  const [selectedStore, setSelectedStore] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedStore, setSelectedStore] = useState(null);
-  const [hoveredStore, setHoveredStore] = useState(null);
-  const [cities, setCities] = useState(AVAILABLE_CITIES);
   const [selectedCity, setSelectedCity] = useState('Bruxelles');
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(13);
+  const [centerCoordinates, setCenterCoordinates] = useState(CITY_COORDINATES['Bruxelles']);
+  const [mapSettings] = useState({
+    zoom: {
+      overview: 13,
+      detail: 16,
+      transitionDuration: 500,
+      transitionEasing: 'ease-out'
+    }
+  });
+  const [hoveredStore, setHoveredStore] = useState(null);
 
   useEffect(() => {
     const fetchStores = async () => {
       try {
-        console.log('Début du fetch');
         const response = await fetch('/api/stores');
-        console.log('Status de la réponse:', response.status);
-        
         const data = await response.json();
-        console.log('Données reçues:', data);
         
-        if (!Array.isArray(data)) {
-          console.error('Les données reçues ne sont pas un tableau:', data);
-          setStores([]);
-          return;
-        }
-
         const formattedData = data.map(store => ({
           ...store,
           openingHours: Array.isArray(store.openingHours)
@@ -62,10 +136,9 @@ export default function StoresPage() {
               : []
         }));
         
-        console.log('Données formatées:', formattedData);
         setStores(formattedData);
       } catch (error) {
-        console.error('Erreur complète:', error);
+        console.error('Erreur:', error);
         setStores([]);
       } finally {
         setLoading(false);
@@ -82,234 +155,134 @@ export default function StoresPage() {
     return matchesSearch && matchesCity;
   });
 
-  const renderStoreDetails = () => {
-    return (
-      <div className="p-6 bg-transparent rounded-lg shadow-lg">
-        <button 
-          onClick={() => setSelectedStore(null)}
-          className="mb-4 px-4 py-2 rounded-lg text-[#6F4E37]"
-          style={{ backgroundColor: '#FAF2E2' }}
-        >
-          ← Retour à la liste
-        </button>
-
-        <h2 className="text-2xl font-bold mb-4" style={{ color: '#6F4E37' }}>
-          {selectedStore.name}
-        </h2>
-
-        <div className="space-y-4" style={{ backgroundColor: 'transparent' }}>
-          <div className="flex items-start space-x-2">
-            <MapPin className="h-5 w-5 flex-shrink-0 mt-1" style={{ color: '#6F4E37' }} />
-            <div style={{ color: '#6F4E37' }}>
-              <p>{selectedStore.address}</p>
-              <div className="flex space-x-4 mt-1">
-                <Link 
-                  href={`/store/${selectedStore.id}`}
-                  className="inline-block px-4 py-2 bg-[#6F4E37] text-[#FAF2E2] rounded-lg opacity-40 hover:opacity-60 transition-all duration-500"
-                >
-                  Voir le store →
-                </Link>
-                <a 
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedStore.address)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline text-sm mt-2 inline-block"
-                >
-                  Voir sur maps →
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {selectedStore.rating && (
-            <div className="flex items-center space-x-2">
-              <div className="flex items-center">
-                {[...Array(Math.round(selectedStore.rating))].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
-                <span className="ml-2" style={{ color: '#6F4E37' }}>
-                  ({selectedStore.reviewCount} avis)
-                </span>
-              </div>
-            </div>
-          )}
-
-          {selectedStore.phone && (
-            <div className="flex items-center space-x-2">
-              <Phone className="h-5 w-5" style={{ color: '#6F4E37' }} />
-              <a href={`tel:${selectedStore.phone}`} className="hover:text-blue-500" style={{ color: '#6F4E37' }}>
-                {selectedStore.phone}
-              </a>
-            </div>
-          )}
-
-          {selectedStore.website && (
-            <div className="flex items-center space-x-2">
-              <Globe className="h-5 w-5" style={{ color: '#6F4E37' }} />
-              <a href={selectedStore.website} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500" style={{ color: '#6F4E37' }}>
-                Site web
-              </a>
-            </div>
-          )}
-
-          {selectedStore.openingHours && selectedStore.openingHours.length > 0 && (
-            <OpeningHours hours={selectedStore.openingHours} />
-          )}
-        </div>
-      </div>
-    );
+  const updateCenterCoordinates = (store) => {
+    if (store) {
+      setCenterCoordinates({ 
+        latitude: store.latitude, 
+        longitude: store.longitude 
+      });
+    }
   };
 
   if (loading) {
     return (
-      <div className="min-h-screen flex justify-center items-center">
+      <div className="h-screen flex items-center justify-center bg-[#FAF2E2]">
         <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#6F4E37]"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAF2E2' }}>
-      <div className={`container mx-auto px-4 py-8 ${styles.mainContainer}`}>
-        <h1 className={`text-4xl font-bold mb-8 flex items-center gap-2 mt-20 ${styles.pageTitle}`} style={{ color: '#6F4E37' }}>
-          Découvrez les Disquaires à
-          <div className={`relative ${styles.cityDropdown}`}>
-            <button
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="py-1 px-4 border rounded-lg focus:ring-2 flex items-center min-w-[200px] justify-between"
-              style={{ 
-                borderColor: '#6F4E37',
-                backgroundColor: '#FAF2E2',
-                color: '#6F4E37'
-              }}
-            >
-              <span className="inline-block text-4xl">
-                {selectedCity || 'Sélectionnez une ville'}
-              </span>
-              <ChevronDown className="h-7 w-7 ml-2" />
-            </button>
-            {dropdownOpen && (
-              <div 
-                className="absolute mt-2 w-full rounded-lg shadow-lg bg-white z-50"
-                style={{ color: '#6F4E37', minWidth: '200px' }}
+    <div className="h-screen flex flex-col bg-[#FAF2E2]">
+      {/* En-tête avec titre et recherche */}
+      <div className="pt-24 pb-8 px-4">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <h1 className="text-4xl font-bold text-[#6F4E37] flex items-center gap-2">
+            Découvrez les Disquaires à
+            <div className="relative inline-block">
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="py-1 px-4 text-4xl font-bold border rounded-lg focus:ring-2 flex items-center gap-2 bg-white/50"
               >
-                <ul className="py-1">
-                  {cities.map((city) => (
-                    <li
-                      key={city}
-                      className="py-2 px-4 hover:bg-gray-100 cursor-pointer text-base"
-                      onClick={() => {
-                        setSelectedCity(city);
-                        setDropdownOpen(false);
-                      }}
-                    >
-                      {city}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </h1>
-
-        <div className={`relative mb-6 ${styles.searchContainer}`}>
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search className="h-5 w-5" style={{ color: '#6F4E37' }} />
-          </div>
-          <input
-            type="text"
-            placeholder="Rechercher un magasin..."
-            className="block w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2"
-            style={{ 
-              borderColor: '#6F4E37',
-              backgroundColor: '#FAF2E2',
-              color: '#6F4E37'
-            }}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-
-        <div className={`grid md:grid-cols-3 gap-6 ${styles.mainGrid}`}>
-          {/* Liste des magasins */}
-          <div className={`md:h-[calc(100vh-300px)] overflow-y-auto space-y-4 pr-4 ${styles.storesList}`}>
-            {selectedStore ? (
-              renderStoreDetails()
-            ) : filteredStores.length === 0 ? (
-              <div className="p-6 bg-transparent rounded-lg text-center">
-                <p className="text-xl" style={{ color: '#6F4E37' }}>
-                  Aucun magasin trouvé {selectedCity ? `à ${selectedCity}` : ''}.
-                </p>
-              </div>
-            ) : (
-              filteredStores.map((store) => (
-                <div
-                  key={store.id}
-                  className={`p-4 rounded-lg shadow-md transition-all cursor-pointer transform hover:scale-102 hover:shadow-lg`}
-                  style={{
-                    backgroundColor: selectedStore?.id === store.id ? '#FAF2E2' : '#FAF2E2',
-                    color: selectedStore?.id === store.id ? '#6F4E37' : '#6F4E37',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transition = 'background-color 0.5s, color 0.2s';
-                    e.currentTarget.style.backgroundColor = 'rgba(111, 78, 55, 0.2)';
-                    e.currentTarget.style.color = '#6F4E37';
-                    setHoveredStore({...store, noZoom: true});
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#FAF2E2';
-                    e.currentTarget.style.color = '#6F4E37';
-                    setHoveredStore(null);
-                  }}
-                  onClick={() => setSelectedStore(store)}
-                >
-                  <h3 className="text-xl font-bold mb-2" style={{ color: 'inherit' }}>
-                    {store.name}
-                  </h3>
-                  <div className="flex items-start space-x-2 text-inherit">
-                    <MapPin className="h-5 w-5 flex-shrink-0 mt-1" />
-                    <p>{store.address}</p>
-                  </div>
-                  {store.phone && (
-                    <div className="flex items-center space-x-2 text-inherit mt-2">
-                      <Phone className="h-5 w-5" />
-                      <a href={`tel:${store.phone}`} className="hover:opacity-80">
-                        {store.phone}
-                      </a>
-                    </div>
-                  )}
-                  {store.rating && (
-                    <div className="mt-2 flex items-center">
-                      {[...Array(Math.round(store.rating))].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                      ))}
-                      <span className="ml-2 text-inherit">
-                        ({store.reviewCount} avis)
-                      </span>
-                    </div>
-                  )}
-                  <Link 
-                    href={`/store/${store.id}`}
-                    className="mt-4 inline-block px-4 py-2 bg-[#6F4E37] text-[#FAF2E2] rounded-lg opacity-40 hover:opacity-60 transition-all duration-500"
-                  >
-                    Voir le store →
-                  </Link>
+                <span>{selectedCity}</span>
+                <ChevronDown className="h-6 w-6" />
+              </button>
+              {dropdownOpen && (
+                <div className="absolute mt-2 w-full bg-white rounded-lg shadow-lg border min-w-[200px] z-50">
+                  <ul className="py-1">
+                    {AVAILABLE_CITIES.map((city) => (
+                      <li
+                        key={city}
+                        className="px-4 py-2 hover:bg-gray-50 cursor-pointer text-[#6F4E37]"
+                        onClick={() => {
+                          setSelectedCity(city);
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        {city}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))
-            )}
-          </div>
-
-          {/* Carte */}
-          <div className={`md:col-span-2 h-[calc(100vh-300px)] rounded-lg overflow-hidden shadow-xl relative z-0 ${styles.mapContainer}`}>
-            <Map 
-              stores={filteredStores} 
-              selectedStore={selectedStore || hoveredStore}
-              onStoreSelect={setSelectedStore}
-              centerCoordinates={CITY_COORDINATES[selectedCity]} 
+              )}
+            </div>
+          </h1>
+          
+          <div className="relative max-w-2xl">
+            <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-[#6F4E37]" />
+            </div>
+            <input
+              type="text"
+              placeholder="Rechercher un magasin..."
+              className="w-full pl-10 pr-4 py-3 border border-[#6F4E37] rounded-lg bg-white/50 focus:bg-white focus:ring-2 focus:ring-[#6F4E37] transition-colors text-[#6F4E37] placeholder-[#6F4E37]/50"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
         </div>
       </div>
+      
+      {/* Contenu principal */}
+      <div className="flex flex-1">
+        <section className="fixed left-8 right-[50%] top-[calc(16rem+32px)] bottom-8 bg-gray-100 rounded-xl overflow-hidden mr-4">
+          <StoreMap 
+            stores={filteredStores}
+            selectedStore={selectedStore}
+            hoveredStore={hoveredStore}
+            onStoreSelect={setSelectedStore}
+            onStoreHover={setHoveredStore}
+            centerCoordinates={centerCoordinates}
+            zoomLevel={zoomLevel}
+            mapStyle={mapStyle}
+            transitionDuration={mapSettings.zoom.transitionDuration}
+            transitionEasing={mapSettings.zoom.transitionEasing}
+            showAllPoints={true}
+            keepPointsVisible={true}
+          />
+        </section>
+        
+        <section 
+          className="fixed left-[50%] right-8 top-[calc(16rem+32px)] bottom-8 overflow-auto bg-white scroll-smooth overscroll-behavior-y-contain rounded-xl ml-4"
+          style={{
+            scrollBehavior: 'smooth',
+            scrollSnapType: 'y mandatory',
+            WebkitOverflowScrolling: 'touch'
+          }}
+        >
+          <div>
+            {filteredStores.map((store, index) => (
+              <Link
+                key={store.id}
+                href={`/store/${store.id}`}
+                className={`block p-8 border-b border-gray-200 last:border-b-0 hover:bg-[#6F4E37] group opacity-0 animate-fadeIn scroll-snap-align-start scroll-snap-stop-always transition-all duration-300 ease-out`}
+                style={{ 
+                  animationDelay: `${index * 100}ms`,
+                  animationFillMode: 'forwards'
+                }}
+                onMouseEnter={() => {
+                  setSelectedStore(store);
+                  setHoveredStore(store);
+                  updateCenterCoordinates(store);
+                }}
+                onMouseLeave={() => {
+                  setSelectedStore(null);
+                  setHoveredStore(null);
+                }}
+              >
+                <h3 className="text-3xl font-normal text-[#6F4E37] group-hover:text-[#FAF2E2] transition-colors duration-500 ease-out">{store.name}</h3>
+              </Link>
+            ))}
+            {filteredStores.length === 0 && (
+              <div className="p-8 text-center text-[#6F4E37]">
+                Aucun magasin trouvé {selectedCity ? `à ${selectedCity}` : ''}.
+              </div>
+            )}
+          </div>
+        </section>
+      </div>
     </div>
   );
-}
+};
+
+export default StoresMapPage;

@@ -1,27 +1,24 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+node_modules/
+venvT7/
+npm_cache/
 
 # testing
 /coverage
 
 # next.js
-/.next/
-/out/
+.next/
+build/
+dist/
 
 # production
 /build
 
 # misc
 .DS_Store
+._*
 *.pem
 
 # debug
@@ -30,7 +27,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env
+.env.local
 
 # vercel
 .vercel
@@ -39,8 +37,31 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
-.env.local
+# JSON files (avec vos exceptions)
 *.json
 !package.json
 !package-lock.json
+
+# Ajouts pour vos dossiers de développement
+/backups/
+/tmp/
+
+# Python related
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Credentials et données sensibles
+/OCR/credentials/*
+
+# Bases de données SQLite
+*.db
+prisma/dev.db
+
+# Logs
+*.log
+ocr_process.log
+
+# Temp
+node_temp_dir/
+

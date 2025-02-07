@@ -1,0 +1,48 @@
+# Configuration Cloud SQL PostgreSQL - DIGG Vinyl App
+
+## Caractéristiques de l'instance
+Configuration machine :
+- vCPU: 1
+- RAM: 3.75 Go
+- Stockage: 10 Go SSD
+- Type: Bac à sable
+- Zone: unique (europe-west1)
+
+## Protection des données
+- Sauvegardes automatiques: 7 jours
+- Récupération point-in-time: Activée
+- Protection suppression: Activée
+
+## Informations de base
+Instance Name: digg-vinyl-db
+Connection Name: digg-444307:europe-west1:digg-vinyl-db
+Region: europe-west1
+
+## Connexion
+Public IP: 35.195.245.90
+Port: 5432
+Database: diggdb
+Username: postgres
+Password: Mdpdigg-vinyl-db21!
+
+## String de connexion Prisma
+DATABASE_URL="postgresql://postgres:[VOTRE_MOT_DE_PASSE]@35.195.245.90:5432/diggdb"
+
+## Sécurité
+- IP privée: Désactivée
+- IP publique: Activée
+- SSL/TLS: Désactivé
+- Certificats client: Désactivés
+- App Engine: Activé
+
+## Commandes utiles
+# Démarrer l'instance
+gcloud sql instances patch digg-vinyl-db --activation-policy ALWAYS
+
+# Arrêter l'instance
+gcloud sql instances patch digg-vinyl-db --activation-policy NEVER
+
+## Notes importantes
+- Penser à arrêter l'instance après utilisation
+- Sauvegardes configurées pour 7 jours
+- Coût : ~0.07$/heure en fonctionnement
