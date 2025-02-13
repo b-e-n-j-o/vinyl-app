@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Connexion PostgreSQL</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+</head>
+<body>
+    <h2>Test de connexion PostgreSQL</h2>
+    <button onclick="testConnection()">Tester la connexion</button>
+    <div id="result"></div>
+
+    <script>
+        async function testConnection() {
+            try {
+                const response = await axios.get('/api/test-db');
+                document.getElementById('result').innerHTML = 'Connexion réussie: ' + JSON.stringify(response.data);
+            } catch (error) {
+                document.getElementById('result').innerHTML = 'Erreur: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
