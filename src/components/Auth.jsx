@@ -1,4 +1,3 @@
-// src/components/Auth.tsx (ou .jsx)
 'use client'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
@@ -15,7 +14,7 @@ export default function Auth() {
         />
         <span className="text-sm text-gray-700">{session.user?.name}</span>
         <button
-          onClick={() => signOut()}
+          onClick={() => signOut({ callbackUrl: '/' })}
           className="px-4 py-2 text-sm text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors"
         >
           Se déconnecter
@@ -26,7 +25,10 @@ export default function Auth() {
 
   return (
     <button
-      onClick={() => signIn('google')} // Changé de 'github' à 'google'
+      onClick={() => signIn('google', {
+        callbackUrl: '/',
+        redirect: true,
+      })}
       className="px-4 py-2 text-sm text-white bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors"
     >
       Se connecter
