@@ -5,6 +5,7 @@ import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
+import { signIn } from 'next-auth/react';
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -170,12 +171,12 @@ const Navbar = () => {
               </button>
             </>
           ) : (
-            <button 
-              onClick={() => handleNavigation('/api/auth/signin')}
-              className="text-2xl hover:underline text-left transition-all duration-300 cursor-pointer"
-            >
-              Se connecter
-            </button>
+          <button 
+            onClick={() => signIn('google', { callbackUrl: '/' })}
+            className="text-2xl hover:underline text-left transition-all duration-300 cursor-pointer"
+          >
+            Se connecter
+          </button>
           )}
         </div>
       </div>
