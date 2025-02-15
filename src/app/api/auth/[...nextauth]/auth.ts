@@ -1,24 +1,15 @@
 // src/app/api/auth/[...nextauth]/auth.ts
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import type { NextAuthOptions } from "next-auth"
+import { AuthOptions } from "next-auth"
 import prisma from '@/lib/prisma'
 import GoogleProvider from "next-auth/providers/google"
 
-// Utilisez ces imports pour les variables d'environnement dans Next.js 13+
-const googleId = process.env.GOOGLE_ID
-const googleSecret = process.env.GOOGLE_SECRET
-const nextAuthSecret = process.env.NEXTAUTH_SECRET
-
-if (!googleId || !googleSecret || !nextAuthSecret) {
-  throw new Error('Variables d\'environnement manquantes pour l\'authentification')
-}
-
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
-      clientId: googleId,
-      clientSecret: googleSecret,
+      clientId: process.env.GOOGLE_ID as string,
+      clientSecret: process.env.GOOGLE_SECRET as string,
     }),
   ],
   session: {
@@ -39,6 +30,7 @@ export const authOptions: NextAuthOptions = {
       }
       return token
     },
+    // On ajoute juste le callback redirect ici
     redirect: async ({ url, baseUrl }) => {
       if (url.startsWith(baseUrl)) return url
       return baseUrl
@@ -47,7 +39,7 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/auth/signin',
   },
-  secret: nextAuthSecret,
+  secret: process.env.NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === 'development',
 }
 
