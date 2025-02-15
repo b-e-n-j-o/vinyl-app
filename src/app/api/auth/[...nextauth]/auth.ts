@@ -19,8 +19,6 @@ export const authOptions: AuthOptions = {
     session: async ({ session, user }) => {
       if (session?.user) {
         session.user.id = user.id
-        // Log pour debug
-        console.log('Session user:', session.user)
       }
       return session
     },
@@ -30,10 +28,8 @@ export const authOptions: AuthOptions = {
       }
       return token
     },
-    // On ajoute juste le callback redirect ici
-    redirect: async ({ url, baseUrl }) => {
-      if (url.startsWith(baseUrl)) return url
-      return baseUrl
+    redirect: async () => {
+      return '/'  // Redirection forcée vers la page d'accueil
     }
   },
   pages: {
