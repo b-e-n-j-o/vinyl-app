@@ -1,6 +1,6 @@
 // app/profile/page.js
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "../api/auth/[...nextauth]/auth"
+import { authOptions } from '@/auth.config'
 import prisma from '@/lib/prisma'
 import ProfileContent from "./ProfileContent"
 import Navbar from "../../components/Navbar"
