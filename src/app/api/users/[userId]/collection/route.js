@@ -1,7 +1,7 @@
 // app/api/users/[userId]/collection/route.js
 import { getServerSession } from "next-auth/next"
 import { NextResponse } from "next/server"
-import { authOptions } from "../../../auth/[...nextauth]/auth"
+import { authOptions } from '@/auth.config'
 import prisma from '@/lib/prisma'
 
 export async function GET(request, context) {
